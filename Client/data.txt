@@ -1,0 +1,28 @@
+This is the data file from the server
+werh;weir hwekf
+wa ekh awekfndfaWaweo 
+ajkn jfkg
+
+
+
+step 5
+
+
+associate handler to SIGALRM interrupt in main in both server and client
+
+make alarm(unsigned int t) func call after sending message with global const unsigned int t (interval in seconds)
+
+1 handler in server and client for the SIGALRM
+  re-associate the handler with SIGALRM in handler
+  1 global volatile var in server and client to store recvfrom()'s return value to check in handler if received message or not
+    increase consec timeout counter by 1 if actual timeout occured
+      terminate connection if 10 consecutive timeouts
+    resend msg if actual timeout
+    restart timer if actual timeout
+
+cancel alarm after recieving message by calling alarm(0)
+
+1 global volatile var in server and client for consecutive timeouts
+  reset to 0 wen a message is received
+
+reset recvfrom()'s return variable to 0 after receiving msg
