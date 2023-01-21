@@ -117,18 +117,3 @@ An ERROR packet can be the acknowledgment of any other type of packet. The error
 code is an integer indicating the nature of the error. The error message is
 intended for human consumption, and should be in netascii. Like all other
 strings, it is terminated witha zero byte.
-
-Error Codes:
-```
-   Value     Meaning
-   --------------------------------------------------
-   0         Not defined, see error message (if any).
-   1         File not found.
-   2         Access violation.
-   3         Disk full or allocation exceeded.
-   4         Illegal TFTP operation.
-   5         Unknown transfer ID.
-   6         File already exists.
-   7         No such user.
-   --------------------------------------------------
-```
